@@ -12,6 +12,7 @@ function addBookToLibrary() {
     let pages = document.getElementById("pages");
     const newBook = new Book (title.value, author.value, pages.value);
     myLibrary.push(newBook);
+    reset();
     display();
 }
 
@@ -33,4 +34,8 @@ function display() {
         document.getElementsByClassName("card")[i].appendChild(cardAuthor);
         document.getElementsByClassName("card")[i].appendChild(cardPages);
     }
+}
+
+function reset() {
+    container.innerHTML = null;
 }
