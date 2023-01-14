@@ -10,7 +10,27 @@ function addBookToLibrary() {
     let title = document.getElementById("title");
     let author = document.getElementById("author");
     let pages = document.getElementById("pages");
-    const newBook = new Book (title.value, author.value, pages.value)
-    myLibrary.push(newBook)
-    console.log(newBook);
+    const newBook = new Book (title.value, author.value, pages.value);
+    myLibrary.push(newBook);
+    display();
+}
+
+function display() {
+    for (var i = 0; i < myLibrary.length; i++) {
+        const card = document.createElement("div");
+        card.className = "card";
+
+        const cardTitle = document.createElement("div");
+        const cardAuthor = document.createElement("div");
+        const cardPages = document.createElement("div");
+
+        cardTitle.innerText = myLibrary[i].title;
+        cardAuthor.innerText = myLibrary[i].author;
+        cardPages.innerText = myLibrary[i].pages;
+        
+        document.getElementById("container").appendChild(card);
+        document.getElementsByClassName("card")[i].appendChild(cardTitle);
+        document.getElementsByClassName("card")[i].appendChild(cardAuthor);
+        document.getElementsByClassName("card")[i].appendChild(cardPages);
+    }
 }
