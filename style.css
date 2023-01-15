@@ -80,3 +80,15 @@ button {
 .card .cardPages {
     font-style: italic;
 }
+
+.card button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bolder;
+    background-color: white;
+    padding: 13px;
+    height: 13px;
+    width: 13px;
+}
