@@ -25,9 +25,13 @@ function display() {
         const cardAuthor = document.createElement("div");
         const cardPages = document.createElement("div");
 
-        cardTitle.innerText = myLibrary[i].title;
-        cardAuthor.innerText = myLibrary[i].author;
-        cardPages.innerText = myLibrary[i].pages;
+        cardTitle.className = "cardTitle";
+        cardAuthor.className = "cardAuthor"
+        cardPages.className = "cardPages";
+
+        cardTitle.innerHTML = myLibrary[i].title;
+        cardAuthor.innerHTML = myLibrary[i].author;
+        cardPages.innerHTML = myLibrary[i].pages;
         
         document.getElementById("container").appendChild(card);
         document.getElementsByClassName("card")[i].appendChild(cardTitle);

@@ -6,12 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <input id="title" type="text" value="Title">
-    <input id="author" type="text" value="Author">
-    <input id="pages" type="number" value="1">
-    <button onclick="addBookToLibrary();">Add book</button>
+    <div class ="header">
+        <div class="left">
+            <h1>Books</h1>
+            <div class="heading">
+                <label for="title">Title</label>
+                <label for="author">Author</label>
+                <label for="pages">Pages</label>
+            </div>
+            <div class="input">
+                <input id="title" type="text"  name="title" placeholder="Narnia" required>
+                <input id="author" type="text" name="author" placeholder="C.S Lewis" required>
+                <input id="pages" type="number" name="pages" placeholder="245" required>
+            </div>
+        </div>
+        <button onclick="addBookToLibrary()">Add book</button>
+    </div>
 
     <div id="container">
     </div>
