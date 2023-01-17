@@ -7,13 +7,16 @@ body {
     display: grid;
     grid-template-rows: min-content 1fr;
     margin-left: 5px;
+    border-left: 7px ridge #533B30;
 }
 
 .header {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: min-content;
-    margin-bottom: 25px;
+    border-bottom: 6px double black;
+    margin-bottom: 50px;
+    margin-left: 10px;
 }
 
 .heading {
@@ -45,6 +48,7 @@ button {
     padding: 30px 10px;
     font-size: 2.5rem;
     border: 2px solid black;
+    background-color: #E2D1CA;
 }
 
 #container {
@@ -58,9 +62,9 @@ button {
 .card {
     display: flex;
     flex-direction: column;
-    background-color: #EEEFEE;
+    background-color: #E2D1CA;
     color: black;
-    border: 3px solid black;
+    border: 3px solid #533B30;
     border-right: 20px double white;
     max-width: 130px;
     min-height: 150px;
@@ -69,6 +73,7 @@ button {
     padding: 1rem;
     size: min-content;
     font-size: 1rem;
+    margin-left: 10px;
 }
 
 .card .cardTitle {
@@ -81,6 +86,18 @@ button {
     font-style: italic;
 }
 
+.card .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-style: italic;
+}
+
+.card .check {
+    display: flex;
+    align-items: center;
+}
+
 .card button {
     display: flex;
     justify-content: center;
@@ -88,7 +105,25 @@ button {
     font-size: 1rem;
     font-weight: bolder;
     background-color: white;
-    padding: 13px;
-    height: 13px;
-    width: 13px;
+    padding: 7px;
+    height: 7px;
+    width: 7px;
+    border-radius: 0.15em;
 }
+
+input[type="checkbox"] {
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid black;
+    border-radius: 0.15em;
+    margin-left: 7px;
+}
+  
+  input[type="checkbox"]:checked {
+    background-color: #0e9594;
+  }
+  
+  
