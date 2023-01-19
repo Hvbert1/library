@@ -67,6 +67,12 @@ function display() {
     }
 }
 
+document.getElementById("myform").addEventListener("submit", function(e){
+    e.preventDefault();
+    addBookToLibrary();
+    document.getElementById("myform").reset();
+  });
+
 
 function reset() {
     container.innerHTML = null;
