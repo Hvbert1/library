@@ -1,19 +1,25 @@
 let myLibrary = [];
 
-function Book(title, author, pages) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
+class Book {
+    constructor(title, author, pages) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+    }
+
+    displayBook() {
+        reset();
+        display();
+    }
 }
 
 function addBookToLibrary() {
-    let title = document.getElementById("title");
-    let author = document.getElementById("author");
-    let pages = document.getElementById("pages");
-    const newBook = new Book (title.value, author.value, pages.value);
+    let title = document.getElementById("title").value;
+    let author = document.getElementById("author").value;
+    let pages = document.getElementById("pages").value;
+    const newBook = new Book (title, author, pages);
     myLibrary.push(newBook);
-    reset();
-    display();
+    newBook.displayBook();
 }
 
 function display() {
