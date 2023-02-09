@@ -5,6 +5,7 @@ class Book {
         this.title = title;
         this.author = author;
         this.pages = pages;
+        this.read = false;
     }
 
     displayBook() {
@@ -40,11 +41,10 @@ function display() {
         cardAuthor.className = "cardAuthor"
         cardPages.className = "cardPages";
         check.className = "check";
+        check.id = i;
     
-        remove.id = i;
         read.setAttribute("type", "checkbox");
         read.id = "read"
-        label.htmlFor = "read";
 
         cardTitle.innerHTML = myLibrary[i].title;
         cardAuthor.innerHTML = myLibrary[i].author;
@@ -53,13 +53,31 @@ function display() {
         label.innerHTML = "Read?";
 
         remove.addEventListener('click',function(){ 
-            if (this.id > -1) {
-                myLibrary.splice(this.id, 1);
+            if (check.id > -1) {
+                myLibrary.splice(check.id, 1);
             }
             reset();
             display();
-        }),
-        
+        })
+
+        read.addEventListener('click', function(e) {
+            let index = e.target.parentElement.id;
+
+            if (myLibrary[index].read === false) {
+                myLibrary[index].read = true;
+                e.currentTarget.style.backgroundColor = "pink";
+            } else { 
+                myLibrary[index].read = false;
+                e.currentTarget.style.backgroundColor = "#fff"; 
+            }
+        })
+
+        if(myLibrary[i].read === true) {
+            read.style.backgroundColor = "pink";
+        } else {
+            read.style.backgroundColor = "#fff";
+        }
+                
         document.getElementById("container").appendChild(card);
         document.getElementsByClassName("card")[i].appendChild(cardTitle);
         document.getElementsByClassName("card")[i].appendChild(cardAuthor);
