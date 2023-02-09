@@ -122,8 +122,3 @@ input[type="checkbox"] {
     margin-left: 7px;
 }
   
-  input[type="checkbox"]:checked {
-    background-color: #0e9594;
-  }
-  
-  
